@@ -1,0 +1,9 @@
+FROM python
+VOLUME /datos
+RUN python3 -m pip install --upgrade pip
+ RUN pip install flask
+ RUN pip install pyopenssl
+ RUN pip install pyotp
+COPY password-evolution.py /home/myapp2
+CMD /home/myapp2/password-evolution.py
+EXPOSE 5151
